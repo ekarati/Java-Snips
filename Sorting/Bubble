@@ -1,23 +1,31 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
 import java.io.*;
-public class BubbleSort
+public class Main
 {
-    int nums[];
-    public static void main()
+    static int nums[];
+    public static void main(String args[])throws IOException
     {
-        BubbbleSort obj = new BubbleSort;
-        obj.input(nums[]);
+        Main obj = new Main();
+        obj.input(nums);
         System.out.println("Original Array:");
-        obj.display(nums[]);
-        obj.bubbleSort(nums[]);
+        obj.display(nums);
+        obj.bubbleSort(nums);
         System.out.println("Sorted Array:");
-        obj.display(nums[]);
+        obj.display(nums);
     }
-    public void input(int nums[])
+    public void input(int nums[])throws IOException
     {
-        BufferedReader br = new BufferedReader(new InputStreamRead(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the length:");
         int len = Integer.parseInt(br.readLine());
-        nums[] = new nums[len];
+        nums = new int[len];
         System.out.println("Enter the numbers:");
         for(int i=0; i<nums.length; i++)
         {
@@ -27,13 +35,13 @@ public class BubbleSort
     public void bubbleSort(int nums[])
     {
         int tmp;
-        for(i=0; i<nums.length; i++)
+        for(int i=0; i<nums.length; i++)
         {
-            for(j=0; j<nums.length-1; j++)
+            for(int j=0; j<nums.length-1; j++)
             {
                 if(nums[j]>nums[j+1])
                 {
-                    swap(j,j+1,nums[]);
+                    swap(j,j+1,nums);
                 }
             }
         }
