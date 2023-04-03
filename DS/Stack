@@ -1,0 +1,81 @@
+import java.io.*;
+public class Stack 
+{
+    int arr[];
+    int top;
+    int len;
+    public Stack(int len)
+    {
+        top=-1;
+        this.len=len;
+        arr = new int[len];
+    }
+    public static void main(String args[])throws IOException
+    {
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        Stack obj = new Stack(3);
+
+        obj.push(0);
+        obj.push(1);
+        obj.push(2);
+        obj.print();
+        obj.push(3);
+        obj.pop();
+        obj.top();
+        obj.print();
+        obj.pop();
+        obj.pop();
+        obj.pop();
+
+
+    }
+    public int pop()
+    {
+        if(isEmpty())
+        {
+            System.out.println("The Stack is empty");
+            return -99;
+        }
+        int del=arr[top];
+        top--;
+        return del;
+    }
+    public void push(int a)
+    {
+        if(isFull())
+        {
+            System.out.println("The Stack is Full");
+            return;
+        }
+        top++;
+        arr[top]= a;
+    }
+    public void top()
+    {
+        if(isEmpty())
+        {
+            System.out.println("The Stack is empty");
+        }
+        else
+        {
+            System.out.println("The topmost element is: "+ arr[top]);
+        }
+    }
+    public boolean isEmpty()
+    {
+        return (top==-1);
+    }
+    public boolean isFull()
+    {
+        return (top==len-1);
+    }
+    public void print()
+    {
+        for(int i=0; i<=top; i++)
+        {
+            System.out.print(arr[i]+"  ");
+        }
+        System.out.println();
+    }
+}
